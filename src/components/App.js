@@ -6,13 +6,15 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Menu from "./Menu";
 //Importando componente Usuarios
 import Usuarios from "./Usuarios";
-
-const Tareas = () => {
-  return <div>Tareas</div>;
-};
+//Importando componente Publicaciones
+import Publicaciones from "./Publicaciones";
+//Importando componente Tareas
+import Tareas from "./Tareas";
+//Importando componente Guardar
+import Guardar from "./Tareas/Guardar";
 
 //Creando componente
-const App = () => {
+const App = (props) => {
   return (
     //Permite al resto de las rutas funcionar
     <BrowserRouter>
@@ -21,6 +23,10 @@ const App = () => {
         {/*Rutas de nuestra App*/}
         <Route exact path="/" component={Usuarios} />
         <Route exact path="/tareas" component={Tareas} />
+        <Route exact path="/publicaciones/:key" component={Publicaciones} />
+        <Route exact path="/tareas/guardar" component={Guardar} />
+        <Route exact path="/tareas/guardar/:usuarioId/:tareaId" component={Guardar} />
+
       </div>
     </BrowserRouter>
   );
